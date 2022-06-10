@@ -1,12 +1,14 @@
-﻿namespace CaiNaFesta.Models
+﻿using System;
+
+namespace CaiNaFesta.Models
 {
     public class EventoModel
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Dia { get; set; }
-        public string HoraInicio { get; set; }
-        public string HoraFim { get; set; }
+        public string Nome { get; set; }
+        public DateTime Data { get; set; }
+        public TimeSpan HoraInicio { get; set; }
+        public TimeSpan HoraFim { get; set; }
         public string Estado { get; set; }
         public string Cidade { get; set; }  
         public string Descrição { get; set; }

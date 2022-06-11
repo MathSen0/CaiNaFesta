@@ -27,8 +27,8 @@
                 Hora de término:
             </div>
             <div>
-                <input name="horainicio" id="horaInicio" type="time" />
-                <input name="horaFim" id="horaFim" type="time" />
+                <input name="horainicio" step="00:30" id="horaInicio" type="time" />
+                <input name="horaFim" id="horaFim" step="00:30" type="time" />
             </div>
             <p></p>
             <div>
@@ -63,11 +63,11 @@
                     <option value="26">z</option>
                 </select>
                 @*<select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>*@
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>*@
             </div>
             <p></p>
             <div>
@@ -81,10 +81,11 @@
             </div>
             <p></p>
             <div>
-                <label>Máximo de <input type="number" /> pessoas no evento.</label>
+                <label>Máximo de <input type="number" class="col-1" /> pessoas no evento.</label>
             </div>
             <p></p>
-            <input type="submit" class="btn-primary" value="cadastrar" />
+            @*<input type="submit" class="btn-primary" value="cadastrar" />*@
+            <a class="btn btn-primary" type="button" asp-controller="Evento" asp-action="Cadastrar">Cadastrar Evento</a>
         </div>
     </form>
 </body>

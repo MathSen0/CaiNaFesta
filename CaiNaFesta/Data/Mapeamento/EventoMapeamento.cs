@@ -21,7 +21,7 @@ namespace CaiNaFesta.Data.Mapeamento
                 builder.Property(t => t.HoraFim).HasColumnType("time(7)");
                 builder.Property(t => t.Estado).HasColumnType("varchar(30)");
                 builder.Property(t => t.Cidade).HasColumnType("varchar(50)");
-                builder.Property(t => t.Descrição).HasColumnType("varchar(300)");
+                builder.Property(t => t.Descricao).HasColumnType("varchar(300)");
                 builder.Property(t => t.Email).HasColumnType("varchar(50)");
                 builder.Property(t => t.Lotacao).HasColumnType("int");
 

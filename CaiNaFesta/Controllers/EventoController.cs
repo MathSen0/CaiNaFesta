@@ -1,4 +1,5 @@
-﻿using CaiNaFesta.Models;
+﻿using CaiNaFesta.Data.Repositorio.Interfaces;
+using CaiNaFesta.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
@@ -12,11 +13,15 @@ using System.Threading.Tasks;
 
 namespace CaiNaFesta.Controllers
 {
+    
     public class EventoController : Controller
     {
-        public EventoController()
+        private readonly IConfiguration _configuration;
+        private readonly IEventoRepositorio _eventoRepositorio;
+        public EventoController(IConfiguration configuration, IEventoRepositorio eventoRepositorio)
         {
-
+            _configuration = configuration;
+            _eventoRepositorio = eventoRepositorio;
         }
         public IActionResult Index()
         {

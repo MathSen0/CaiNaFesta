@@ -1,3 +1,4 @@
+using CaiNaFesta.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,6 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using CaiNaFesta.Data.Repositorio;
+using CaiNaFesta.Data.Repositorio.Interfaces;
 
 namespace CaiNaFesta
 {
@@ -23,7 +27,17 @@ namespace CaiNaFesta
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<BancoContexto>((serviceProvider, options) =>
+            {
+                options.UseSqlServer(Configuration.GetSection("ConnectionStrings")["StringConexao"].ToString());
+            });
             services.AddControllersWithViews();
+
+            services.AddHttpClient();
+
+
+            services.AddScoped<IEventoRepositorio, EventoRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

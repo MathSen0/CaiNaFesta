@@ -11,9 +11,13 @@ namespace CaiNaFesta.Models
         public TimeSpan HoraFim { get; set; }
         public string Estado { get; set; }
         public string Cidade { get; set; }  
-        public string Descrição { get; set; }
+        public string Descricao { get; set; }
         public string Email { get; set; }  
         public int Lotacao { get; set; }
+        public EventoModel()
+        {
+
+        }
 
         //Coloquei os campos Dia, HoraInicio e HoraFim como String por que não apareceu as opções certas de vetores --Matheus
     }

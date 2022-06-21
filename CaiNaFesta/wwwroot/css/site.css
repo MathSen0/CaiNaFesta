@@ -2,6 +2,10 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 
+#Logo, #Suporte{
+    display:inline-block;
+}
+
 .Buscar{
     border-inline-width:60px;
     border-right:60px;

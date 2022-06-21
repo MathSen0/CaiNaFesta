@@ -1,6 +1,53 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+
+.Buscar{
+    border-inline-width:60px;
+    border-right:60px;
+    border-color: #0366d6;
+}
+
+.Logo{
+    height: 2px;
+    width:2px
+}
+
+img{
+    height: 200px;
+    width:300px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card__cover {
+    height: 100%;
+    width: 103%;
+}
+
+.card__content {
+    /* Take available height */
+    flex: 1;
+}
+
+.cards {
+    display: flex;
+    /* Put a card in the next row when previous cards take all width */
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.cards__item {
+    /* There will be 4 cards per row */
+    flex-basis: 25%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;

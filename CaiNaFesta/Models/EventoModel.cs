@@ -15,6 +15,6 @@ namespace CaiNaFesta.Models
         public string Email { get; set; }  
         public int Lotacao { get; set; }
 
-        //Coloquei os campos Dia, HoraInicio e HoraFim como String por que não apareceu as opções certas de vetores --Matheus
+
     }
 }

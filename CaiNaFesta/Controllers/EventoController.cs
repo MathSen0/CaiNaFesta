@@ -27,10 +27,10 @@ namespace CaiNaFesta.Controllers
         }
             public IActionResult Index()
         {
-            List<EventoModel> Evento = new();
+            List<EventoModel> evento = new();
 
-            Evento = _eventorepositorio.Buscarevento();
-            return View();
+            evento = _eventorepositorio.Buscarevento();
+            return View(evento);
         }
     }
 }

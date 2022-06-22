@@ -10,5 +10,9 @@ namespace CaiNaFesta.Models
         public string Telefone { get; set; }
         public string Descricao { get; set; }
 
+        public SuporteModel()
+        {
+
+        }
     }
 }

@@ -32,5 +32,14 @@ namespace CaiNaFesta.Controllers
             evento = _eventorepositorio.Buscarevento();
             return View(evento);
         }
+        public IActionResult Cadastrar(EventoModel Evento)
+        {
+            return View();
+        }
+        public IActionResult Inserir (EventoModel evento)
+        {
+            var retorno = _eventorepositorio.Cadastrar(evento);
+            return View(null);
+        }
     }
 }

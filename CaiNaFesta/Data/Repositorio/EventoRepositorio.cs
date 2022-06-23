@@ -18,5 +18,12 @@ namespace CaiNaFesta.Data.Repositorio
         {
             return _bancoContexto.Evento.ToList();
         }
+        public EventoModel Cadastrar(EventoModel evento)
+        {
+
+            _bancoContexto.Evento.Add(evento);
+            _bancoContexto.SaveChanges();
+            return evento;
+        }
     }
 }

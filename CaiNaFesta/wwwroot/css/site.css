@@ -2,6 +2,38 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 
+
+   
+
+.linha::after{
+    content:" ";
+    display:table;
+    clear:both;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-50 {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-box;
+}
+
 #Logo, #Suporte{
     display:inline-block;
 }

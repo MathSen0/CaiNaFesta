@@ -19,6 +19,9 @@ namespace CaiNaFesta.Models
 
         }
 
-        //Coloquei os campos Dia, HoraInicio e HoraFim como String por que não apareceu as opções certas de vetores --Matheus
+        public EventoModel()
+        {
+
+        }
     }
 }

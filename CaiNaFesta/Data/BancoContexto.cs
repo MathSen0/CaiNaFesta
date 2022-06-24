@@ -14,7 +14,9 @@ namespace CaiNaFesta.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new EventoMapeamento());
+            modelBuilder.ApplyConfiguration(new SuporteMapeamento());
         }
         public DbSet<EventoModel> Evento { get; set; }
+        public DbSet<SuporteModel> Suporte { get; set; }
     }
 }

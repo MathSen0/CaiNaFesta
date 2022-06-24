@@ -10,14 +10,14 @@ namespace CaiNaFesta.Data.Repositorio
     public class EventoRepositorio : IEventoRepositorio
     {
         private readonly BancoContexto _bancoContexto;
-
         public EventoRepositorio(BancoContexto bancoContexto)
         {
-
             _bancoContexto = bancoContexto;
-
         }
-
+        public List<EventoModel> Buscarevento()
+        {
+            return _bancoContexto.Evento.ToList();
+        }
         public EventoModel Cadastrar(EventoModel evento)
         {
 

@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using CaiNaFesta.Data.Repositorio;
 using CaiNaFesta.Data.Repositorio.Interfaces;
 
+
 namespace CaiNaFesta
 {
     public class Startup
@@ -64,7 +65,7 @@ namespace CaiNaFesta
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Teste}/{action=Index}/{id?}");
             });
         }
     }

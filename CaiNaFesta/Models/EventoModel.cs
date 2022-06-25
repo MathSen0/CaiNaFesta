@@ -18,10 +18,5 @@ namespace CaiNaFesta.Models
         {
 
         }
-
-        public EventoModel()
-        {
-
-        }
     }
 }

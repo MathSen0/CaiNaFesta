@@ -32,6 +32,7 @@ namespace CaiNaFesta.Controllers
 
             evento = _eventorepositorio.Buscarevento();
             return View(evento);
+
         }
         public IActionResult Cadastrar(EventoModel Evento)
         {
@@ -41,6 +42,10 @@ namespace CaiNaFesta.Controllers
         {
             var retorno = _eventorepositorio.Cadastrar(evento);
             return View(null);
+        }
+        public IActionResult Comprar()
+        {
+            return View();
         }
     }
 }

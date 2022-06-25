@@ -31,7 +31,7 @@ for details on configuring this project to bundle and minify static web assets. 
 
 label {
     padding: 12px 12px 12px 0;
-    display: inline-box;
+    display: inline-block;
 }
 
 #Logo, #Suporte{
@@ -52,6 +52,10 @@ label {
 img{
     height: 200px;
     width:300px;
+}
+#imagemGrande{
+    height: 500px;
+    width: 1000px;
 }
 
 .card {

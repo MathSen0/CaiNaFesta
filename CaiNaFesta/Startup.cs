@@ -62,7 +62,7 @@ namespace CaiNaFesta
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Teste}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

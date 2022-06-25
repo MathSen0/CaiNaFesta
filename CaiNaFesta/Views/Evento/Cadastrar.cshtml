@@ -10,17 +10,17 @@
 
 
 <body>
-    <div class="text-center">
+    <div @*class="text-center"*@>
         <h1>Cadastro de Evento</h1>
     </div>
-    <form asp-controller="Evento" asp-action="Cadastrar" method="post">
+    <form asp-controller="Evento" asp-action="Inserir" method="post">
         <div class="text-center">
             <div class="linha">
                 <div class="col-25"> 
                     <label>Nome do evento:</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" asp-for="Nome" required />
+                    <input type="text" style="width:53rem" asp-for="Nome" required />
                 </div>
             </div>
             <div class="linha">
@@ -35,14 +35,13 @@
                 <div class="col-25">
                     <label>Hora de inicio:</label>
                 </div>
-                <div class="col-25">
-                    <input name="horainicio" id="horaInicio" type="time" asp-for="HoraInicio" required />
-                </div>
-
-            </div>
-            <div class="linha">
                 <div class="col-50">
                     <label>Hora de término:</label>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-25">
+                    <input name="horainicio" id="horaInicio" type="time" asp-for="HoraInicio" required />
                 </div>
                 <div class="col-50">
                     <input name="horaFim" id="horaFim" step="00:30" type="time" asp-for="HoraFim" />
@@ -51,15 +50,15 @@
             </div>
             
             <div class="linha">
-                <label>Estado / Cidade:</label>
-                                <select id="Estado" name="Estado" class="direita">
-                                    <option value="Acre">Acre</option>
-                                    <option value="Alagoas">Alagoas</option>
-                                    <option value="Amapá">Amapá</option>
-                                    <option value="Amazonas">Amazonas</option>
-                                    <option value="Bahia">Bahia</option>
-                                    <option value="Ceará">Ceará</option>
-                                    <option value="Espírito Santo">Espírito Santo</option>
+                <label class="col-25">Estado:</label>
+                                <select id="Estado" name="Estado" class="col-75 direita">
+                                    <option value="Ac">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="ES">Espírito Santo</option>
                                     <option value="Goiás">Goiás</option>
                                     <option value="Maranhão">Maranhão</option>
                                     <option value="Mato Grosso">Mato Grosso</option>
@@ -80,16 +79,24 @@
                                     <option value="Tocantins">Tocantins</option>
                                     <option value="Distrito Federal">Distrito Federal</option>
                                 </select>
-                <input style="" type="text" asp-for="Cidade" required>
+
+            </div>
+            <div class="linha">
+                <label class="col-25">Cidade:</label>
+                <input class="col-75" type="text" asp-for="Cidade" required>
             </div>
             
             <div class="linha">
-                <label id="LabelTextarea"> Descrição de evento: </label>
-                <textarea placeholder="Preencha as descrições do evento..." asp-for="Descricao"></textarea>
+                <label id="LabelTextarea" class="col-25"> Descrição de evento: </label>
+                <textarea placeholder="Preencha as descrições do evento..."class="col-75" rows="8" cols="10" asp-for="Descricao"></textarea>
             </div>
             <div class="linha">
-                <label >Emai:</label>
-                <input type="email" placeholder="exemplo123@gmail.com" asp-for="Email" required />
+                <label class="col-25">Emai:</label>
+                <input type="email" placeholder="exemplo123@gmail.com"  class="col-75" asp-for="Email" required />
+            </div>
+            <div class="linha">
+                <label class="col-25">Imagem de capa do evento:</label>
+                <input type="file" class="col-75"/>
             </div>
             
             <div class="linha">

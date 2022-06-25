@@ -53,7 +53,7 @@ namespace CaiNaFesta.Controllers
             {
                 TempData["Mensagem"] = "Mensagem enviada com socesso! Entraremos em contato assim que possível";
             }
-            return RedirectToAction("Suporte");
+            return View("suporte");
         }
     }
 }

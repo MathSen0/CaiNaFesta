@@ -1,0 +1,41 @@
+﻿@model VerificacaoModel
+
+
+@*@if (TempData ["Mensagem1"] != null)
+{
+    <div class="alert-danger text-center">
+        @TempData ["Mensagem1"]
+    </div>
+}*@
+@if (TempData ["Mensagem1"] != null)
+{
+    <div class="alert-danger text-center">
+        @TempData["Mensagem1"]
+    </div>
+}
+
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Verifique-se</title>
+    <link rel="stylesheet" href="meucss.css" />
+    <link rel="stylesheet" href="js/site.js" />
+</head>
+
+<body>
+
+    <form class="text-center">
+        <div>
+            <h3>Código de Verificação</h3>
+            <p></p>
+            <div>
+                <label>Insira o código de verificação fornecido pela <i>Equipe Cai na Festa</i></label><br />
+                <input type="text" asp-for="codigo" />
+            </div>
+            <button type="submit" asp-action="Verificar" class="btn-primary">Verificar</button>
+        </div>
+    </form>
+
+</body>
+</html>

@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace CaiNaFesta.Controllers
 {
+    
     public class EventoController : Controller
     {
         private readonly IConfiguration _configuration;
@@ -31,6 +32,7 @@ namespace CaiNaFesta.Controllers
 
             evento = _eventorepositorio.Buscarevento();
             return View(evento);
+
         }
         public IActionResult Cadastrar(EventoModel Evento)
         {
@@ -40,6 +42,14 @@ namespace CaiNaFesta.Controllers
         {
             var retorno = _eventorepositorio.Cadastrar(evento);
             return View("index");
+        }
+        public IActionResult Comprar()
+        {
+            return View();
+        }
+        public IActionResult Ingresso()
+        {
+            return View();
         }
     }
 }

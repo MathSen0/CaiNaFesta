@@ -36,7 +36,7 @@
     <div id="Tittle" class="h2 text-center" style="font-family:'Times New Roman', Times, serif">Principais eventos disponiveis</div><br />
     <p></p>
 
-    @if (Model != null && Model.Any())
+    @*@if (Model != null && Model.Any())
     {
         foreach (EventoModel evento in Model)
         {
@@ -44,7 +44,7 @@
                 <div class="card text-center">
 
                     <div class="card__cover">
-                        <img @*src="@evento.Img"*@ />
+                        <img src="evento.Img" />
                     </div>
 
                     <div class="card__content">
@@ -57,8 +57,8 @@
                 </div>
             </div>
         }
-    }
-    @*<div class="cards">
+    }*@
+    <div class="cards">
 
             <div class="cards__item text-center">
                 <div class="card text-center">
@@ -76,6 +76,6 @@
                     </div>
                 </div>
             </div>
-        </div>*@
+        </div>
 </body>
 </html>

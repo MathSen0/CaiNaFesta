@@ -25,5 +25,10 @@ namespace CaiNaFesta.Data.Repositorio
             _bancoContexto.SaveChanges();
             return evento;
         }
+
+        public List<EventoModel> BuscarNome(string nome)
+        {
+            return _bancoContexto.Evento.Where(x => x.Nome.Contains(nome)).ToList();
+        }
     }
 }

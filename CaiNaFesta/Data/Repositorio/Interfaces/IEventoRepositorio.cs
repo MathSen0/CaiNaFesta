@@ -11,6 +11,8 @@ namespace CaiNaFesta.Data.Repositorio.Interfaces
     {  
         public EventoModel Cadastrar(EventoModel evento);
         List<EventoModel> Buscarevento();
-      
+
+        List<EventoModel> BuscarNome(string nome);
+
     }
 }

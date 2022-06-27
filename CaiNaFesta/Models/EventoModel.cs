@@ -14,6 +14,7 @@ namespace CaiNaFesta.Models
         public string Descricao { get; set; }
         public string Email { get; set; }  
         public int Lotacao { get; set; }
+        public string Imagem { get;set; }
         public EventoModel()
         {
 

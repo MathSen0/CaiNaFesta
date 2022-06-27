@@ -32,6 +32,7 @@ namespace CaiNaFesta
             services.AddHttpClient();
             services.AddScoped<IEventoRepositorio, EventoRepositorio>();
             services.AddScoped<ISuporteRepositorio, SuporteRepositorio>();
+            services.AddScoped<IIngressoRepositorio, IngressoRepositorio>();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

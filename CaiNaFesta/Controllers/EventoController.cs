@@ -29,12 +29,16 @@ namespace CaiNaFesta.Controllers
             _ingressorepositorio = ingressoRepositorio;
 
         }
-            public IActionResult Index()
+            public IActionResult Index(EventoModel BuscarPor)
         {
             List<EventoModel> evento = new();
 
             evento = _eventorepositorio.Buscarevento();
+            
+            if(BuscarPor.Nome != null)
+            { }
             return View(evento);
+
 
         }
         public IActionResult Cadastrar(EventoModel Evento)
@@ -69,5 +73,6 @@ namespace CaiNaFesta.Controllers
                 return RedirectToAction("Ingresso");
             }
         }
+
     }
 }

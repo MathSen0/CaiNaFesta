@@ -51,9 +51,15 @@ namespace CaiNaFesta.Controllers
             var retorno = _suporterepositorio.Ticket(suporte);
             if (retorno != null)
             {
-                TempData["Mensagem"] = "Mensagem enviada com socesso! Entraremos em contato assim que possível";
+                TempData["Mensagem2"] = "Mensagem enviada com socesso! Entraremos em contato assim que possível";
+                return RedirectToAction("Index", "Home");
             }
-            return View("suporte");
+            else
+            {
+                TempData["Mensagem3"] = "Erro ao enviar o ticket! Aguarde alguns minutos e tente novamente";
+                return RedirectToAction("Suporte");
+            }
+
         }
     }
 }

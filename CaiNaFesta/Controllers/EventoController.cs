@@ -18,13 +18,16 @@ namespace CaiNaFesta.Controllers
     {
         private readonly IConfiguration _configuration;
         private readonly IEventoRepositorio _eventorepositorio;
+        private readonly IIngressoRepositorio _ingressorepositorio;
 
 
 
-        public EventoController(IConfiguration configuration, IEventoRepositorio eventoRepositorio)
+        public EventoController(IConfiguration configuration, IEventoRepositorio eventoRepositorio, IIngressoRepositorio ingressoRepositorio)
         {
             _configuration = configuration;
             _eventorepositorio = eventoRepositorio;
+            _ingressorepositorio = ingressoRepositorio;
+
         }
             public IActionResult Index()
         {
@@ -50,6 +53,21 @@ namespace CaiNaFesta.Controllers
         public IActionResult Ingresso()
         {
             return View();
+        }
+
+        public IActionResult RegistroCompra (IngressoModel ingresso)
+        {
+            var retorno = _ingressorepositorio.RegistroCompra(ingresso);
+            if (retorno != null)
+            {
+                TempData["Mensagem4"] = "Reserva feita com sucesso! Em breve o produtor do evento entrará em contato";
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                TempData["Mensagem5"] = "Não foi possível resgistrar a reserva, tente novamente mais tarde! Caso repetir o erro, entre em contato com o nosso Suporte";
+                return RedirectToAction("Ingresso");
+            }
         }
     }
 }

@@ -1,18 +1,19 @@
 ﻿@model VerificacaoModel
 
 
-@*@if (TempData ["Mensagem1"] != null)
-{
-    <div class="alert-danger text-center">
-        @TempData ["Mensagem1"]
-    </div>
-}*@
 @if (TempData ["Mensagem1"] != null)
 {
     <div class="alert-danger text-center">
         @TempData["Mensagem1"]
     </div>
 }
+@if (TempData ["Mensagem"] != null)
+{
+    <div class="sucess-danger text-center">
+        @TempData["Mensagem"]
+    </div>
+}
+
 
 <!DOCTYPE html>
 <html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
@@ -33,7 +34,9 @@
                 <label>Insira o código de verificação fornecido pela <i>Equipe Cai na Festa</i></label><br />
                 <input type="text" asp-for="codigo" />
             </div>
+            <div>
             <button type="submit" asp-action="Verificar" class="btn-primary">Verificar</button>
+            </div>
         </div>
     </form>
 

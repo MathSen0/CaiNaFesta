@@ -15,8 +15,10 @@ namespace CaiNaFesta.Data
         {
             modelBuilder.ApplyConfiguration(new EventoMapeamento());
             modelBuilder.ApplyConfiguration(new SuporteMapeamento());
+            modelBuilder.ApplyConfiguration(new IngressoMapeamento());
         }
         public DbSet<EventoModel> Evento { get; set; }
         public DbSet<SuporteModel> Suporte { get; set; }
+        public DbSet<IngressoModel> Ingresso { get; set; }
     }
 }

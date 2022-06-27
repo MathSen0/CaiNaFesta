@@ -1,9 +1,15 @@
 ﻿@model SuporteModel
 
-@if (TempData["Mensagem"] != null)
+@if (TempData["Mensagem2"] != null)
 {
     <div class="alert-success">
-        @ViewData["Mensagem"]
+        @TempData["Mensagem2"]
+    </div>
+}
+@if (TempData ["Mensagem3"] != null)
+{
+    <div class="alert-danger text-center">
+        @TempData["Mensagem3"]
     </div>
 }
 

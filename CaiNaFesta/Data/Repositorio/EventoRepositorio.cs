@@ -25,5 +25,9 @@ namespace CaiNaFesta.Data.Repositorio
             _bancoContexto.SaveChanges();
             return evento;
         }
+        public EventoModel BuscarId(int id)
+        {
+            return _bancoContexto.Evento.FirstOrDefault(x => x.Id == id);
+        }
     }
 }

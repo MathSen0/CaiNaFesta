@@ -31,16 +31,16 @@
     <div style="">
         <form asp-controller="Home" asp-action="Ticket" method="post">
             <label>Nome Completo:</label><br />
-            <input type="text" asp-for="Nome" id="NomeSuporte" class="col-4" /><br />
+            <input type="text" asp-for="Nome" id="NomeSuporte" class="col-4" required /><br />
 
             <label>Email:</label><br />
-            <input type="email" asp-for="Email" id="Email" class="col-4" /><br />
+            <input type="email" asp-for="Email" id="Email" class="col-4" required /><br />
 
             <label>Telefone:</label><br />
-            <input type="text" asp-for="Telefone" id="Telefone" class="col-3" /><br />
+            <input type="text" asp-for="Telefone" id="Telefone" class="col-3" required /><br />
 
             <label>No que podemos te ajudar?</label><br />
-            <textarea type="text" asp-for="Descricao" id="Descricao" rows="6" cols="50" maxlength="300" wrap="soft"></textarea><br />
+            <textarea type="text" asp-for="Descricao" id="Descricao" rows="6" cols="50" required maxlength="300" wrap="soft"></textarea><br />
             <div class="text-left">
                 <button type="submit" class="btn-primary">Enviar</button>
             </div>

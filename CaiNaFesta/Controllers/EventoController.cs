@@ -21,7 +21,6 @@ namespace CaiNaFesta.Controllers
         private readonly IIngressoRepositorio _ingressorepositorio;
 
 
-
         public EventoController(IConfiguration configuration, IEventoRepositorio eventoRepositorio, IIngressoRepositorio ingressoRepositorio)
         {
             _configuration = configuration;
@@ -29,7 +28,8 @@ namespace CaiNaFesta.Controllers
             _ingressorepositorio = ingressoRepositorio;
 
         }
-            public IActionResult Index()
+
+        public IActionResult Index()
         {
             List<EventoModel> evento = new();
 

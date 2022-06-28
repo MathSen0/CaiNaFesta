@@ -13,6 +13,12 @@ namespace CaiNaFesta.Data.Repositorio.Interfaces
         List<EventoModel> Buscarevento();
 
         List<EventoModel> BuscarNome(string nome);
+        public EventoModel BuscarId(int id);
+        public List<EventoModel> BuscarData(DateTime data);
+        public List<EventoModel> BuscarCidade(string cidade);
+        public List<EventoModel> BuscarEstado(string estado);
+
+
 
     }
 }

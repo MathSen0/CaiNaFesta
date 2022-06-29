@@ -1,0 +1,119 @@
+﻿@model EventoModel
+
+@if (TempData ["Mensagem"] != null)
+{
+    <div class="alert-success text-center">
+        @TempData["Mensagem"]
+    </div>
+}
+
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Cadastro de evento</title>
+    <link rel="stylesheet" href="meucss.css" />
+</head>
+
+
+<body>
+    <div @*class="text-center"*@>
+        <h1>Cadastro de Evento</h1>
+    </div>
+    <form asp-controller="Evento" asp-action="Inserir" method="post">
+        <div class="text-center">
+            <div class="linha">
+                <div class="col-25"> 
+                    <label>Nome do evento:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" style="width:53rem" asp-for="Nome" required />
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-25">
+                    <label>Data do evento:</label>
+                </div>
+                <div class="col-75">
+                    <input type="date" asp-for="Data" required />
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-25">
+                    <label>Hora de inicio:</label>
+                </div>
+                <div class="col-50">
+                    <label>Hora de término:</label>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="col-25">
+                    <input name="horainicio" id="horaInicio" type="time" asp-for="HoraInicio" required />
+                </div>
+                <div class="col-50">
+                    <input name="horaFim" id="horaFim" step="00:30" type="time" asp-for="HoraFim" />
+                </div>
+               
+            </div>
+            
+            <div class="linha">
+                <label class="col-25">Estado:</label>
+                                <select id="Estado" name="Estado" class="col-75 direita">
+                                    <option value="Ac">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                    <option value="DF">Distrito Federal</option>
+                                </select>
+
+            </div>
+            <div class="linha">
+                <label class="col-25">Cidade:</label>
+                <input class="col-75" type="text" asp-for="Cidade" required>
+            </div>
+            
+            <div class="linha">
+                <label id="LabelTextarea" class="col-25"> Descrição de evento: </label>
+                <textarea placeholder="Preencha as descrições do evento..."class="col-75" rows="8" cols="10" asp-for="Descricao"></textarea>
+            </div>
+            <div class="linha">
+                <label class="col-25">Emai:</label>
+                <input type="email" placeholder="exemplo123@gmail.com"  class="col-75" asp-for="Email" required />
+            </div>
+            <div class="linha">
+                <label class="col-25" asp-for="Imagem">Imagem de capa do evento:</label>
+                <input type="file" class="col-75" asp-for="Imagem"/>
+            </div>
+            
+            <div class="linha">
+                <label>Máximo de <input type="number" class="col-2" asp-for="Lotacao" required /> pessoas no evento.</label>
+            </div>
+            
+            <input type="submit" class="btn-primary" value="cadastrar" />
+            @*<a class="btn btn-primary" type="button" asp-controller="Evento" asp-action="Cadastrar">Cadastrar Evento</a>*@
+        </div>
+    </form>
+</body>
+</html>

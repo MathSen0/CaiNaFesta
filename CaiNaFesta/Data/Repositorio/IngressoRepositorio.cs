@@ -15,7 +15,7 @@ namespace CaiNaFesta.Data.Repositorio
         {
             _bancoContexto.Ingresso.Add(ingresso);
             _bancoContexto.SaveChanges();
-            return ingresso;
+            return (ingresso);
         }
     }
 }

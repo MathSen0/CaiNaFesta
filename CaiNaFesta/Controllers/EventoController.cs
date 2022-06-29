@@ -28,13 +28,31 @@ namespace CaiNaFesta.Controllers
             _ingressorepositorio = ingressoRepositorio;
 
         }
-
-        public IActionResult Index()
+            public IActionResult Index(EventoModel BuscarPor)
         {
             List<EventoModel> evento = new();
 
             evento = _eventorepositorio.Buscarevento();
+            
+            if(BuscarPor.Nome != null)
+            {
+                evento = _eventorepositorio.BuscarNome(BuscarPor.Nome);
+            }
+            if(BuscarPor.Data != null)
+            {
+                evento = _eventorepositorio.BuscarData(BuscarPor.Data);
+            }
+            if(BuscarPor.Cidade != null)
+            {
+                evento = _eventorepositorio.BuscarCidade(BuscarPor.Cidade);
+            }
+            if(BuscarPor.Estado != null)
+            {
+                evento = _eventorepositorio.BuscarEstado(BuscarPor.Estado);
+            }
+
             return View(evento);
+
 
         }
         public IActionResult Cadastrar(EventoModel Evento)
@@ -44,11 +62,13 @@ namespace CaiNaFesta.Controllers
         public IActionResult Inserir (EventoModel evento)
         {
             var retorno = _eventorepositorio.Cadastrar(evento);
-            return View("index");
+            return RedirectToAction("index", "Home");
         }
-        public IActionResult Comprar()
+        public IActionResult Comprar(EventoModel evento)
         {
-            return View();
+            var retorno = _eventorepositorio.BuscarId(evento.Id);
+            evento = retorno;
+            return View(evento);
         }
         public IActionResult Ingresso()
         {
@@ -69,5 +89,6 @@ namespace CaiNaFesta.Controllers
                 return RedirectToAction("Ingresso");
             }
         }
+
     }
 }

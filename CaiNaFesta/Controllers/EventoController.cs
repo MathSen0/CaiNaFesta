@@ -33,15 +33,16 @@ namespace CaiNaFesta.Controllers
         {
             List<EventoModel> evento = new();
 
+            
             evento = _eventorepositorio.Buscarevento();
             
             if(BuscarPor.Nome != null)
             {
                 evento = _eventorepositorio.BuscarNome(BuscarPor.Nome);
             }
-            if(BuscarPor.Data != null)
+            if(BuscarPor.Data.HasValue)
             {
-                evento = _eventorepositorio.BuscarData(BuscarPor.Data);
+                evento = _eventorepositorio.BuscarData(BuscarPor.Data.Value);
             }
             if(BuscarPor.Cidade != null)
             {
@@ -69,7 +70,8 @@ namespace CaiNaFesta.Controllers
         {
             var retorno = _eventorepositorio.BuscarId(evento.Id);
             evento = retorno;
-            return View(evento);
+
+            return View("Comprar", retorno);
         }
         public IActionResult Ingresso()
         {

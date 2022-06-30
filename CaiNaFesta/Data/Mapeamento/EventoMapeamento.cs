@@ -24,7 +24,7 @@ namespace CaiNaFesta.Data.Mapeamento
                 builder.Property(t => t.Descricao).HasColumnType("varchar(300)");
                 builder.Property(t => t.Email).HasColumnType("varchar(50)");
                 builder.Property(t => t.Lotacao).HasColumnType("int");
-
+                builder.Property(t => t.Imagem).HasColumnType("varbinary(Max)");
             }
         }
     }
